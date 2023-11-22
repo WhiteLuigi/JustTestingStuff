@@ -32,11 +32,20 @@ jobs:
       - name: Haxelib Stuff
         run: |
           haxelib setup C:/haxelib
-          haxelib install lime
           haxelib install flixel
+          haxelib install lime
+          haxelib run lime setup
           haxelib install openfl
           haxelib install flixel-addons
-          haxelib run lime setup
+          haxelib install flixel-tools
+          haxelib install hxcpp
+          haxelib install tjson
+          haxelib install hxjsonast
+          haxelib install hxCodec
+          haxelib install sscript
+          haxelib install hxcpp-debug-server
+          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+          haxelib git linc_luajit https://github.com/superpowers04/linc_luajit
       - name: Compile
         run: haxelib run lime build html5
       - name: Publish Artifact
